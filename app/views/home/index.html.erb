@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Listing Github Repositories</h2>
+  <small>Here you can easily find the repositories of a user or organization</small>
+  <div class="form-group">
+    <%= radio_button_tag 'action', "search-box", @search_checked  %>
+    <%= label_tag "Search a repository" %>
+    <%= radio_button_tag 'action', "list-box", @list_checked  %>
+    <%= label_tag "Get list of repositories" %>
+  </div>
+  <%= form_for :listing_repo, url: '/', method: :get do |f| %>
+    <div class="list-box box">
+      <div class="form-group">
+        <label>Select the type</label>
+        <%= f.select :list_type, [['User', 'users'], ['Organization', 'orgs']], {include_blank: "Select Type", selected: params[:listing_repo].present? ? params[:listing_repo][:list_type] : ''}, {class: 'form-control'}%>
+      </div>
+      <div class="form-group">
+        <label>Enter username / organization</label>
+        <%= f.text_field :name, value: params[:listing_repo].present? ? params[:listing_repo][:name]: '',  class: 'form-control'%>
+      </div>
+    </div>  
+    <div class="search-box box">
+      <div class="form-group">
+        <label>Enter Repository Name</label>
+        <%= f.text_field :search, value: params[:listing_repo].present? ? params[:listing_repo][:search]: '', class: 'form-control'%>
+      </div>
+    </div>  
+    <div class="form-group">
+      <%= f.submit 'Find Repositories', class: 'btn btn-success'%>
+    </div>  
+  <% end %>
+  <div class='results'>
+    <% if params[:listing_repo] %>
+      <% if @results.present? %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>FullName</th>
+              <th>Description</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <% @results.each do |result| %>
+              <tr>
+                <td><%= result['name']%></td>
+                <td><%= result['full_name']%></td>
+                <td><%= result['description']%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>  
+      <% else %>
+        <div class="alert alert-info" role="alert">
+          No Results
+        </div>
+      <% end %>
+    <% end %>
+  </div>  
+</div>

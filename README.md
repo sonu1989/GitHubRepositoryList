@@ -21,3 +21,6 @@ How operate the application
   * Then enter the username of user or name of organization and click to `Find Repository` button
   * You will see the list of repositories.
 
+Please have a look to following video to checking how application will work
+
+https://www.loom.com/share/897e0247a47840d1ad4da95086fb9fe2

@@ -1,25 +1,23 @@
-# README
+Follow the steps to run the application:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone the application, run command `git clone https://github.com/sonu1989/GitHubRepositoryList.git`
 
-Things you may want to cover:
+* Run command `bundle install`
 
-* Ruby version
+* Run command `rails server`
 
-* System dependencies
+* Now open the url `http://locahost:3000`
 
-* Configuration
+How operate the application
 
-* Database creation
+* When you open url  `http://localhost:3000`, you will see the page with two option to find repository
+  
+  1) Search a repository 
+  * Here enter the repository name you want to search and click to `Find Repository` button
+  * You will see the matched repository details there if any match found.
+  
+  2) Get list of repositories
+  * Here you need to add select the type either you want to see user reposiories or organization repositories.
+  * Then enter the username of user or name of organization and click to `Find Repository` button
+  * You will see the list of repositories.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# GitHubRepositoryList

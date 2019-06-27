@@ -6,7 +6,7 @@ Follow the steps to run the application:
 
 * Run command `rails server`
 
-* Now open the url `http://locahost:3000`
+* Now open the url `http://localhost:3000`
 
 How operate the application
 
